@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h1 class="mb-4">Projects</h1>
+
+<div class="row">
+  <% projects.forEach(function(project) { %>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= project.title %></h5>
+          <p class="card-text"><%= project.description %></p>
+          <% project.tools.forEach(function(tool) { %>
+            <span class="badge bg-secondary"><%= tool %></span>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('partials/footer') %>
